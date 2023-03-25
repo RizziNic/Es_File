@@ -27,9 +27,9 @@ public class Main {
         out.close();
 
         File d = new File("C:/Users//nicolo.rizzi//Desktop//Es_File");
-        System.out.println("Verifico se la directory esiste: " + d.exists() );
+        System.out.println("La directory esiste: " + d.exists() );
         String a[] = d.list(); //creo un array di stringhe e lo riempio con la lista dei files presenti nella directory
-        System.out.println("stampo la lista dei files contenuti nella directory:");
+        System.out.println("Lista dei file:");
         int j = 0;
         for (int i=0;i<a.length;i++){
             j = j + 1;
