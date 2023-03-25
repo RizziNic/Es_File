@@ -5,26 +5,30 @@ import java.util.*;
 
 public class Main {
 
-    public static void buffer(String s1, String s2, String sout) throws IOException{
-        BufferedReader in1  = new BufferedReader(new FileReader(s1));
-        BufferedReader in2 = new BufferedReader(new FileReader(s2));
-        PrintWriter out = new PrintWriter(new FileWriter(sout));
+    public static void buffer(String s1, String s2, String sout) throws IOException {
+        try{
+            BufferedReader in1  = new BufferedReader(new FileReader(s1));
+            BufferedReader in2 = new BufferedReader(new FileReader(s2));
+            PrintWriter out = new PrintWriter(new FileWriter(sout));
 
 
-
-        while (s1 != null || s2 != null) {
-            if (s1 != null) {
-                out.println(s1);
-                s1 = in1.readLine();
+            while (s1 != null || s2 != null) {
+                if (s1 != null) {
+                    out.println(s1);
+                    s1 = in1.readLine();
+                }
+                if (s2 != null) {
+                    out.println(s2);
+                    s2 = in2.readLine();
+                }
             }
-            if (s2 != null) {
-                out.println(s2);
-                s2 = in2.readLine();
-            }
+            in1.close();
+            in2.close();
+            out.close();
+        } catch (Exception e){
+            System.out.println("Uno dei due file non esiste");
         }
-        in1.close();
-        in2.close();
-        out.close();
+
     }
     public static void main(String[] args) throws IOException {
 
