@@ -11,15 +11,17 @@ public class Main {
             BufferedReader in2 = new BufferedReader(new FileReader(s2));
             PrintWriter out = new PrintWriter(new FileWriter(sout));
 
+            String lineA = in1.readLine();
+            String lineB = in2.readLine();
 
-            while (s1 != null || s2 != null) {
-                if (s1 != null) {
-                    out.println(s1);
-                    s1 = in1.readLine();
+            while (lineA != null || lineB != null) {
+                if (lineA != null) {
+                    out.println(lineA);
+                    lineA = in1.readLine();
                 }
-                if (s2 != null) {
-                    out.println(s2);
-                    s2 = in2.readLine();
+                if (lineB != null) {
+                    out.println(lineB);
+                    lineB = in2.readLine();
                 }
             }
             in1.close();
