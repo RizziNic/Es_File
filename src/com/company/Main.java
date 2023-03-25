@@ -26,7 +26,7 @@ public class Main {
         in2.close();
         out.close();
 
-        File d = new File("C:/Users//nicolo.rizzi//Desktop//Es_File");
+        File d = new File("C:/Users//nicolo.rizzi//Desktop//Es_File"); //path del progetto IntellJ
         System.out.println("La directory esiste: " + d.exists() );
         String a[] = d.list(); //creo un array di stringhe e lo riempio con la lista dei files presenti nella directory
         System.out.println("Lista dei file:");
