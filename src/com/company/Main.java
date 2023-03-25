@@ -4,13 +4,13 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader in1 = new BufferedReader(new FileReader("A.txt"));
-        BufferedReader in2 = new BufferedReader(new FileReader("B.txt"));
-        PrintWriter out = new PrintWriter(new FileWriter("output.txt"));
 
-        String s1 = in1.readLine();
-        String s2 = in2.readLine();
+    public static void buffer(String s1, String s2, String sout) throws IOException{
+        BufferedReader in1  = new BufferedReader(new FileReader(s1));
+        BufferedReader in2 = new BufferedReader(new FileReader(s2));
+        PrintWriter out = new PrintWriter(new FileWriter(sout));
+
+
 
         while (s1 != null || s2 != null) {
             if (s1 != null) {
@@ -25,6 +25,14 @@ public class Main {
         in1.close();
         in2.close();
         out.close();
+    }
+    public static void main(String[] args) throws IOException {
+
+        String s1;
+        String s2;
+        String sout;
+
+        buffer("A.txt", "B.txt", "output.txt");
 
         File d = new File("C:/Users//nicolo.rizzi//Desktop//Es_File"); //path del progetto IntellJ
         System.out.println("La directory esiste: " + d.exists() );
@@ -35,5 +43,13 @@ public class Main {
             j = j + 1;
             System.out.println(j + ". " + a[i]);
         }
+
+        Scanner input = new Scanner(System.in);
+        s1 = input.nextLine();
+        s2 = input.nextLine();
+
+        buffer(s1, s2, "output.txt");
+
+
     }
 }

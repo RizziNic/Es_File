@@ -1,3 +1,5 @@
+A.txt
+B.txt
 ciao
 mondo
 come
