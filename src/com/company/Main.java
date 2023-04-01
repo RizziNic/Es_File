@@ -5,47 +5,38 @@ import java.util.*;
 
 public class Main {
 
-    public static void bufferParola(String s1, String s2, String sout)  throws IOException{
+    public static void bufferParola(String nuovaS1, String nuovaS2, String sout)  throws IOException{
         try{
-            BufferedReader in1  = new BufferedReader(new FileReader(s1));
-            BufferedReader in2 = new BufferedReader(new FileReader(s2));
+            BufferedReader in1  = new BufferedReader(new FileReader(nuovaS1));
+            BufferedReader in2 = new BufferedReader(new FileReader(nuovaS2));
             PrintWriter out = new PrintWriter(new FileWriter(sout));
 
             int next1;
             int next2;
 
-            do {
-                next1 = in1.read();
-                next2 = in2.read(); // legge il prossimo carattere
-                for(int i=0; i<next1+next2; i++){
-                    char nextc1 = (char) next1;
-                    char nextc2 = (char) next2;
-                    while(nextc1!= ' '){
-                        System.out.print(nextc1); // stampa il carattere
-                        next1++;
-                    }
-                    while(nextc2!= ' '){
-                        System.out.print(nextc2); // stampa il carattere
-                        next2++;
-                    }
-                }
-                /*
-                if (next1 != -1) { // se non e' finito il file
-                    char nextc1 = (char) next1;
-                    if(nextc1!= ' ');
-                        System.out.print(nextc1); // stampa il carattere
-                }
-                if (next2 != -1) { // se non e' finito il file
-                    char nextc2 = (char) next2;
-                    if(nextc2!= ' ');
-                        System.out.print(nextc2); // stampa il carattere
-                }
+            nuovaS1 = in1.readLine();
+            nuovaS2 = in2.readLine(); // legge il prossimo carattere
 
-                 */
 
-            } while (next1 != -1 || next2!= -1);
 
+
+
+            while (nuovaS1 != null || nuovaS2 != null) {
+                if (nuovaS1 != null) {
+                    nuovaS1.split(" ");
+                    out.print(nuovaS1);
+                    nuovaS1 = in1.readLine();
+                }
+                if (nuovaS2 != null) {
+                    nuovaS2.split(" ");
+                    out.print(nuovaS2);
+                    nuovaS2 = in2.readLine();
+                }
+            }
             in1.close();
+            in2.close();
+            out.close();
+
 
         } catch (Exception e){
             System.out.println("Uno dei due file non esiste");
