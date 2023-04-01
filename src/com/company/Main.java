@@ -17,10 +17,6 @@ public class Main {
             nuovaS1 = in1.readLine();
             nuovaS2 = in2.readLine(); // legge il prossimo carattere
 
-
-
-
-
             while (nuovaS1 != null || nuovaS2 != null) {
                 if (nuovaS1 != null) {
                     nuovaS1.split(" ");
