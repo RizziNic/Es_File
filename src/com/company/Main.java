@@ -90,7 +90,7 @@ public class Main {
         s1 = input.nextLine();
         s2 = input.nextLine();
 
-        buffer(s1, s2, "output.txt");
+        //buffer(s1, s2, "output.txt");
 
         String nuovaS1 = s1;
         String nuovaS2 = s2;
